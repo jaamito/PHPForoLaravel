@@ -17,4 +17,12 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/inicio','HomeController@index')->name('home');
+
+Route::get('/inicio/crearPost','PostController@index');
+
+Route::get('/inicio/crearTag','TagController@index');
+
+Route::get('/inicio/crearHashtag','HashtagController@index');
+
+Route::get('/inicio/verPerfil','HomeController@perfil');

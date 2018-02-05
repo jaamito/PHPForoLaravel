@@ -7,8 +7,8 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+    <title>{{ config('app.name', 'Laravel Foro') }}</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -26,44 +26,55 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-
+                        
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
-                    </a>
+                    <div style="margin-left: -8%">
+                        <div style="margin-top: -5%">
+                            <a class="navbar-brand" href="{{ url('/') }}">
+                                <IMG SRC="{{ asset('img/titulo.png') }}" WIDTH=160 HEIGHT="40" ALT="Laravel Foro">
+                            </a>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
-                    <ul class="nav navbar-nav">
-                        &nbsp;
-                    </ul>
+                    
 
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
                         @guest
                             <li><a href="{{ route('login') }}">Login</a></li>
-                            <li><a href="{{ route('register') }}">Register</a></li>
+                            <li><a href="{{ route('register') }}">Registrar</a></li>
                         @else
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
+                        
+                            <div class="collapse navbar-collapse" id="app-navbar-collapse">
+                            <!-- Left Side Of Navbar -->
+                                <a href="#" style="margin-top: 2%;" class="btn btn-info " role="button">Crear Post </a>
+                                <a href="#" style="margin-top: 2%;" class="btn btn-info " role="button">Crear Tag </a>
+                                <a href="#" style="margin-top: 2%;" class="btn btn-info " role="button">Crear Hashtag </a>
+                                <a href="#" style="margin-top: 2%;" class="btn btn-success " role="button">Ver tus Perfil </a>
+                            <!-- Right Side Of Navbar -->
+                            <ul class="nav navbar-nav navbar-right">
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
                                     {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
+                                    </a>
 
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <a href="{{ route('logout') }}"
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                             Logout
-                                        </a>
+                                    </a>
 
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                             {{ csrf_field() }}
-                                        </form>
-                                    </li>
-                                </ul>
+                                    </form>
+                                </li>
+                            </ul>
                             </li>
                         @endguest
                     </ul>
