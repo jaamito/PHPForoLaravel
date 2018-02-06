@@ -51,10 +51,6 @@
                         
                             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                             <!-- Left Side Of Navbar -->
-                                <a href="{{ url('inicio/crearPost') }}" style="margin-top: 2%;" class="btn btn-info " role="button">Crear Post </a>
-                                <a href="#" style="margin-top: 2%;" class="btn btn-info " role="button">Crear Tag </a>
-                                <a href="#" style="margin-top: 2%;" class="btn btn-info " role="button">Crear Hashtag </a>
-                                <a href="#" style="margin-top: 2%;" class="btn btn-success " role="button">Ver tu Perfil </a>
                             <!-- Right Side Of Navbar -->
                             <ul class="nav navbar-nav navbar-right">
                                 <li class="dropdown">
@@ -63,11 +59,16 @@
                                     </a>
 
                             <ul class="dropdown-menu">
+                            	<li><a href="#" class="btn btn-success " role="button"><span class="glyphicon glyphicon-user"></span> Ver tu Perfil </a></li>
+                            	<li><a href="#" role="button"><span class="glyphicon glyphicon-plus"></span> Crear Tag </a></li>
+                                <li><a href="#" role="button"><span class="glyphicon glyphicon-plus"></span> Crear Hashtag </a></li>
+                                <li><a href="{{ url('inicio/crearPost') }}"  role="button"><span class="glyphicon glyphicon-plus"></span> Crear Post </a></li>
+                            	<li role="presentation" class="divider"></li>
                                 <li>
-                                    <a href="{{ route('logout') }}"
+                                    <a href="{{ route('logout') }}" class="btn btn-danger "
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                            Logout
+                                            Logout <span class="glyphicon glyphicon-log-out"></span>
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -75,7 +76,7 @@
                                     </form>
                                 </li>
                             </ul>
-                            </li>
+                           
                         @endguest
                     </ul>
                 </div>
