@@ -11,8 +11,8 @@
                 <div class="panel-body">
    					<p style="min-height:0px;margin:0px 0 0px 0">
                         <a  href="{{ url('/inicio/' . $post->id ) }}"><span class="glyphicon glyphicon-pencil"></span> Comentar</a>&nbsp;&nbsp;&nbsp;
-                        <a style="color: green;" href="{{ url('/inicio/editar' . $post->id ) }}"><span class="glyphicon glyphicon-wrench"></span> Editar</a>&nbsp;&nbsp;&nbsp;
-                        <a style="color: red;" href="{{ url('/inicio/' . $post->id ) }}"><span class="glyphicon glyphicon-remove"></span> Eliminar</a>
+                        <a style="color: green;" href="{{ url('/inicio/editar/' . $post->id ) }}"><span class="glyphicon glyphicon-wrench"></span> Editar</a>&nbsp;&nbsp;&nbsp;
+                        <a style="color: red;" href="{{ url('/inicio/eliminar' . $post->id ) }}"><span class="glyphicon glyphicon-remove"></span> Eliminar</a>
                     </p>
                     
                     

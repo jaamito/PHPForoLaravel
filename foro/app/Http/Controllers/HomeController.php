@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
+use App\Comentarios;
 
 class HomeController extends Controller
 {
@@ -31,6 +32,8 @@ class HomeController extends Controller
     public function show($id)
     {
         $arrayPost = Post::find($id);
-        return view('foro.show', array('id'=>$id, 'titulo'=>$arrayPost));
+        $arrayComentarios = Comentarios::select()->where('idPost', $id)->get();
+        return view('foro.show', array('id'=>$id, 'titulo'=>$arrayPost,'arrayComentarios'=>$arrayComentarios));
+        
     }
 }
