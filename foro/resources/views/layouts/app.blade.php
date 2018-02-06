@@ -30,7 +30,7 @@
                     <!-- Branding Image -->
                     <div style="margin-left: -8%">
                         <div style="margin-top: -5%">
-                            <a class="navbar-brand" href="{{ url('/') }}">
+                            <a class="navbar-brand" href="{{ url('inicio') }}">
                                 <IMG SRC="{{ asset('img/titulo.png') }}" WIDTH=160 HEIGHT="40" ALT="Laravel Foro">
                             </a>
                         </div>
@@ -51,10 +51,10 @@
                         
                             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                             <!-- Left Side Of Navbar -->
-                                <a href="#" style="margin-top: 2%;" class="btn btn-info " role="button">Crear Post </a>
+                                <a href="{{ url('inicio/crearPost') }}" style="margin-top: 2%;" class="btn btn-info " role="button">Crear Post </a>
                                 <a href="#" style="margin-top: 2%;" class="btn btn-info " role="button">Crear Tag </a>
                                 <a href="#" style="margin-top: 2%;" class="btn btn-info " role="button">Crear Hashtag </a>
-                                <a href="#" style="margin-top: 2%;" class="btn btn-success " role="button">Ver tus Perfil </a>
+                                <a href="#" style="margin-top: 2%;" class="btn btn-success " role="button">Ver tu Perfil </a>
                             <!-- Right Side Of Navbar -->
                             <ul class="nav navbar-nav navbar-right">
                                 <li class="dropdown">

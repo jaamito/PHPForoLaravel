@@ -16,6 +16,7 @@ class ForoTables extends Migration
         Schema::create('post', function (Blueprint $table) {
           $table->increments('id');
           $table->integer('idUsuario')->unsigned();
+          $table->string('nombreUsuario');
           $table->string('titulo');
           $table->string('texto');
           $table->string('img');
@@ -25,6 +26,7 @@ class ForoTables extends Migration
         Schema::create('comentario', function (Blueprint $table) {
           $table->increments('id');
           $table->integer('idUsuario')->unsigned();
+          $table->string('nombreUsuario');
           $table->integer('idPost')->unsigned();
           $table->string('texto');
           $table->string('img');
@@ -35,6 +37,7 @@ class ForoTables extends Migration
         Schema::create('hashtag', function (Blueprint $table) {
           $table->increments('id');
           $table->integer('idPost')->unsigned();
+          $table->string('nombreUsuario');
           $table->integer('idComentario')->unsigned();
           $table->string('nombre');
           $table->timestamps();
@@ -44,6 +47,7 @@ class ForoTables extends Migration
         Schema::create('tag', function (Blueprint $table) {
           $table->increments('id');
           $table->integer('idPost')->unsigned();
+          $table->string('nombreUsuario');
           $table->string('nombre');
           $table->timestamps();
           $table->foreign('idPost')->references('id')->on('post')->onDelete('cascade');

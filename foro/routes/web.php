@@ -17,12 +17,16 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/inicio','HomeController@index')->name('home');
+Route::get('/inicio','HomeController@index');
 
-Route::get('/inicio/crearPost','PostController@index');
+Route::get('/inicio/crearPost','PostController@crear');
+
+Route::post('/inicio/crearPost','PostController@guardarPost');
 
 Route::get('/inicio/crearTag','TagController@index');
 
 Route::get('/inicio/crearHashtag','HashtagController@index');
+
+Route::get('/inicio/{id}','HomeController@show');
 
 Route::get('/inicio/verPerfil','HomeController@perfil');
