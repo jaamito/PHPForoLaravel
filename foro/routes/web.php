@@ -33,3 +33,9 @@ Route::get('/inicio/{id}','HomeController@show');
 Route::post('/inicio/{id}','HomeController@guardarComentario');
 
 Route::get('/inicio/verPerfil','HomeController@perfil');
+
+Route::get('/inicio/editar/{id}', 'EditarController@index');
+
+Route::get('/inicio/editar/{id}', 'EditarController@getInfo');
+
+Route::post('/inicio/editar/{id}', 'EditarController@update');
