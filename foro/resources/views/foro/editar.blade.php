@@ -30,7 +30,7 @@
 
                         <label for="texto">Texto Principal del Post</label>
                         <!-- -->
-                        <textarea id="texto" name="texto" cols="44" class="form-control" value="{{$infoEdit->texto}}" required></textarea>
+                        <textarea id="texto" name="texto" cols="44" class="form-control" required>{{$infoEdit->texto}}</textarea>
 
                         <!--Id usuario-->
                         <input readonly="readonly" type="hidden" name="idUsuario" value="{{ Auth::user()->id }}" id="idUsuario" class="form-control">
