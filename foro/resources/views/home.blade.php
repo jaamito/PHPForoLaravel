@@ -26,7 +26,6 @@
         <div class="col-md-8 col-md-offset-0">
             <div class="panel panel-default">
                 <div class="panel-heading"><h4><strong>{{$post->titulo}}</strong></h4><div style="text-align: right;">Creador: {{$post->nombreUsuario}}</div><div style="text-align: right;">{{$post->created_at}}</div></div>
-
                 <div class="panel-body">
                     <p style="min-height:0px;margin:0px 0 0px 0">
                         <a  href="{{ url('/inicio/' . $post->id ) }}"><span class="glyphicon glyphicon-pencil"></span> Comentar</a>&nbsp;&nbsp;&nbsp;
@@ -42,4 +41,13 @@
 </div>
 @endif
 @endforeach
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- anuncio footeer -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-2596668065560537"
+     data-ad-slot="5070729019"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 @endsection

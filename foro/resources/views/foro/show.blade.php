@@ -63,8 +63,6 @@
                         <!--<label>Id usuario:</label><label>Id Post:</label>-->
                         <input readonly="readonly" type="hidden" name="idUsuario" value="{{ Auth::user()->id }}" id="idUsuario" class="form-control">
                         <input readonly="readonly" type="hidden" name="idPost" value="{{$titulo->id}}" id="id" class="form-control">
-                    
-                    
                     </div>
                     <div class="form-group text-center">
                         <button type="submit" class="btn btn-primary" style="min-height:0px;margin:0px 0 0px 0">
@@ -76,8 +74,6 @@
         </div>
     </div>
 </div>
-
-
 @else
 @foreach( $arrayComentarios as $key => $coment )
 <div class="container">

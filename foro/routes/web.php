@@ -18,7 +18,6 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/inicio','HomeController@index');
-Route::put('/inicio','HomeController@index');
 
 Route::get('/inicio/crearPost','PostController@crear');
 
