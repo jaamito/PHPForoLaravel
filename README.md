@@ -19,3 +19,6 @@ $ php artisan migrate
 $ php artisan db:seed
 
 $ php artisan serve
+
+bbdd post->posts
+     comentario->comentarios
