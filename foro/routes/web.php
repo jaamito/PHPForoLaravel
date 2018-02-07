@@ -18,6 +18,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/inicio','HomeController@index');
+Route::put('/inicio','HomeController@index');
 
 Route::get('/inicio/crearPost','PostController@crear');
 
@@ -28,5 +29,7 @@ Route::get('/inicio/crearTag','TagController@index');
 Route::get('/inicio/crearHashtag','HashtagController@index');
 
 Route::get('/inicio/{id}','HomeController@show');
+
+Route::post('/inicio/{id}','HomeController@guardarComentario');
 
 Route::get('/inicio/verPerfil','HomeController@perfil');

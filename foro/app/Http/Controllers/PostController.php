@@ -16,16 +16,14 @@ class PostController extends Controller
 		//creamos object Post
         $post = new Post();
         //Si el campo esta vacio no crea post
-        if( $request->has("titulo")) {
+        
         	$post->idUsuario = $request->input('idUsuario');
         	$post->nombreUsuario = $request->input('nombreUsuario');
             $post->titulo = $request->input('titulo');
             $post->texto = $request->input('texto');
+            $post->comentarios = 0;
             $post->img = ("Proximamente...");
             $post->save();
             return view('foro.bien');
-        } else {
-            return view('foro.mal');
-        }
     }
 }

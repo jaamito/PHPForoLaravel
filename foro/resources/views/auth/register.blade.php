@@ -43,10 +43,10 @@
 
                         <!--Edad-->
                         <div class="form-group{{ $errors->has('edad') ? ' has-error' : '' }}">
-                            <label for="edad" class="col-md-4 control-label"><span class="glyphicon glyphicon-plus"></span>&nbsp;Edad</label>
+                            <label for="edad" class="col-md-4 control-label"><span class="glyphicon glyphicon-plus"></span>&nbsp;Fecha de nacimiento</label>
 
                             <div class="col-md-6">
-                                <input id="edad" type="text" class="form-control" name="edad" value="{{ old('edad') }}" required autofocus>
+                                <input id="edad" type="date" class="form-control" name="edad" value="{{ old('edad') }}" required autofocus>
 
                                 @if ($errors->has('edad'))
                                     <span class="help-block">

@@ -12,6 +12,9 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/app2.css') }}" rel="stylesheet">
+    <link href="{{ asset('js/app2.js') }}" rel="stylesheet">
+
 </head>
 <body>
     <div id="app">
@@ -31,7 +34,7 @@
                     <div style="margin-left: -8%">
                         <div style="margin-top: -5%">
                             <a class="navbar-brand" href="{{ url('inicio') }}">
-                                <IMG SRC="{{ asset('img/titulo.png') }}" WIDTH=160 HEIGHT="40" ALT="Laravel Foro">
+                                <span class="glyphicon glyphicon-home">&nbsp;<IMG SRC="{{ asset('img/titulo.png') }}" WIDTH=160 HEIGHT="40" ALT="Laravel Foro"></span>
                             </a>
                         </div>
                     </div>

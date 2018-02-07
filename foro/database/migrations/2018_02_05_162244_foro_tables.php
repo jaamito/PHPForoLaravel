@@ -16,6 +16,7 @@ class ForoTables extends Migration
         Schema::create('post', function (Blueprint $table) {
           $table->increments('id');
           $table->integer('idUsuario')->unsigned();
+          $table->integer('comentarios');
           $table->string('nombreUsuario');
           $table->string('titulo');
           $table->string('texto');

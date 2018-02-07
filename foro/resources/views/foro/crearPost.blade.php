@@ -20,20 +20,20 @@
                     {{ csrf_field() }}
     
                     <div class="form-group">
-                        <label for="titulo">Titulo del Post</label>
-                        <!-- -->
-                        <input type="text" name="titulo" id="titulo" class="form-control">
-
-                        <label for="texto">Texto Principal del Post</label>
-                        <!-- -->
-                        <input type="textarea" name="texto" rows="5" id="texto" class="form-control">
-
                         <!--Nombre usuario-->
                         <label>Nombre usuario:</label>
                         <input readonly="readonly" type="text" name="nombreUsuario" value="{{ Auth::user()->name }}" id="nombreUsuario" class="form-control">
+                        
+                        <label for="titulo">Titulo del Post</label>
+                        <!-- -->
+                        <input type="text" name="titulo" id="titulo" class="form-control" required>
+
+                        <label for="texto">Texto Principal del Post</label>
+                        <!-- -->
+                        <textarea id="texto" name="texto" cols="44" class="form-control" required></textarea> 
+
                         <!--Id usuario-->
-                        <label>Id usuario:</label>
-                        <input readonly="readonly" type="text" name="idUsuario" value="{{ Auth::user()->id }}" id="idUsuario" class="form-control">
+                        <input readonly="readonly" type="hidden" name="idUsuario" value="{{ Auth::user()->id }}" id="idUsuario" class="form-control">
                     
                     </div>
                     <div class="form-group text-center">
