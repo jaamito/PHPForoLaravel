@@ -34,7 +34,7 @@
                     <div style="margin-left: -8%">
                         <div style="margin-top: -5%">
                             <a class="navbar-brand" href="{{ url('inicio') }}">
-                                <span class="glyphicon glyphicon-home">&nbsp;<IMG SRC="{{ asset('img/titulo.png') }}" WIDTH=160 HEIGHT="40" ALT="Laravel Foro"></span>
+                                <IMG SRC="{{ asset('img/titulo.png') }}" WIDTH=160 HEIGHT="40" ALT="Laravel Foro">
                             </a>
                         </div>
                     </div>
@@ -62,7 +62,7 @@
                                     </a>
 
                             <ul class="dropdown-menu">
-                            	<li><a href="#" class="btn btn-success " role="button"><span class="glyphicon glyphicon-user"></span> Ver tu Perfil </a></li>
+                            	<li><a href="{{ url('inicio/perfil') }}" class="btn btn-success " role="button"><span class="glyphicon glyphicon-user"></span> Ver tu Perfil </a></li>
                             	<li><a href="#" role="button"><span class="glyphicon glyphicon-plus"></span> Crear Tag </a></li>
                                 <li><a href="#" role="button"><span class="glyphicon glyphicon-plus"></span> Crear Hashtag </a></li>
                                 <li><a href="{{ url('inicio/crearPost') }}"  role="button"><span class="glyphicon glyphicon-plus"></span> Crear Post </a></li>

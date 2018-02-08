@@ -1,6 +1,9 @@
 @extends('layouts.app')
-
-
+<style type="text/css">
+    .anun{
+        position: absolute;
+    }
+</style>
 @section('content')
 <div class="container">
     <div class="row">

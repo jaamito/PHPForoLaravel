@@ -27,7 +27,7 @@ class HomeController extends Controller
     public function index()
     {
         $arrayPost = Post::select()->orderBy('id', 'desc')->get();
-        $countcoment = Comentarios::select('idPost')->get();
+        $countcoment = Comentarios::all();
         return view('home', array('arrayPost'=>$arrayPost,'countcoment'=>$countcoment));
     }
 

@@ -17,6 +17,8 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::get('/inicio/perfil','PerfilController@perfil');
+
 Route::get('/inicio','HomeController@index');
 
 Route::get('/inicio/crearPost','PostController@crear');
@@ -38,3 +40,4 @@ Route::get('/inicio/editar/{id}', 'EditarController@index');
 Route::get('/inicio/editar/{id}', 'EditarController@getInfo');
 
 Route::post('/inicio/editar/{id}', 'EditarController@update');
+
