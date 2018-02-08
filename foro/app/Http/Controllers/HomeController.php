@@ -65,11 +65,5 @@ class HomeController extends Controller
       $post->delete();
       Post::destroy($id);
       return view('foro.delete');*/
-      $post = Post::find($id)->delete();
 
-
-
-      return redirect()->route('foro.delete');
-
-    }
 }
