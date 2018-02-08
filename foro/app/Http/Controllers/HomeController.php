@@ -65,10 +65,9 @@ class HomeController extends Controller
       $post->delete();
       Post::destroy($id);
       return view('foro.delete');*/
-      $post = Post::find($id);
+      $post = Post::where('id','=',"$id")->first();
 
       $post->delete();
-      $post->save();
 
       return redirect()->route('foro.delete')->with('message', 'Post deleted');
 
