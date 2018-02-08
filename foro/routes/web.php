@@ -43,4 +43,3 @@ Route::post('/inicio/editar/{id}', 'EditarController@update');
 
 Route::delete('/inicio/{id}', 'DeleteController@delete');
 
-
