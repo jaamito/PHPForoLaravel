@@ -60,17 +60,16 @@ class HomeController extends Controller
             $coment->save();
             return redirect('inicio/'.$request->input('idPost'));
     }
-    public function deletePost($id){
-      /*$post=Post::find($id);
+    public function deletePost(Request $id){
+      /*post=Post::find($id);
       $post->delete();
       Post::destroy($id);
       return view('foro.delete');*/
-      $post = Post::find($id);
+      $post = Post::find($id)->delete();
 
-      $post->delete();
-      $post->save();
 
-      return redirect()->route('foro.delete')->with('message', 'Post deleted');
+
+      return redirect()->route('foro.delete');
 
     }
 }
