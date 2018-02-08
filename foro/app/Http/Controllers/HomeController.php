@@ -37,10 +37,10 @@ class HomeController extends Controller
         $arrayComentarios = Comentarios::select()->where('idPost', $id)->get();
         $countcoment = Post::select('comentarios')->count();
         return view('foro.show', array('id'=>$id, 'titulo'=>$arrayPost,'arrayComentarios'=>$arrayComentarios,'countcoment'=>$countcoment));
-        
+
     }
 
-    
+
     public function guardarComentario(Request $request) {
         //creamos object Post
     	//$comentarios = Comentarios::select('comentarios')->where('id', $request->input('idPost'))->count();
@@ -51,7 +51,7 @@ class HomeController extends Controller
 
         $coment= new Comentarios();
         //Si el campo esta vacio no crea post
-        
+
             $coment->idUsuario = $request->input('idUsuario');
             $coment->idPost = $request->input('idPost');
             $coment->nombreUsuario = $request->input('nombreUsuario');
@@ -59,5 +59,18 @@ class HomeController extends Controller
             $coment->img = ("Proximamente...");
             $coment->save();
             return redirect('inicio/'.$request->input('idPost'));
+    }
+    public function deletePost($id){
+      /*$post=Post::find($id);
+      $post->delete();
+      Post::destroy($id);
+      return view('foro.delete');*/
+      $post = Post::find($id);
+
+      $post->delete();
+      $post->save();
+
+      return redirect()->route('foro.delete')->with('message', 'Post deleted');
+
     }
 }

@@ -14,7 +14,7 @@
                 <div class="panel-body">
                     <p style="min-height:0px;margin:0px 0 0px 0">
                        {{$titulo->texto}}
-                    </p> 
+                    </p>
                 </div>
             </div>
         </div>
@@ -33,7 +33,7 @@
                         {{$coment->texto}}
                     </p></br>
                         <a style="color: green;" href="{{ url('/inicio/editar/' . $titulo->id ) }}"><span class="glyphicon glyphicon-wrench"></span> Editar</a>&nbsp;&nbsp;&nbsp;
-                        <a style="color: red;" href="{{ url('/inicio/eliminar' . $titulo->id ) }}"><span class="glyphicon glyphicon-remove"></span> Eliminar</a>
+                        <a style="color: red;" href="{{ url('/inicio/delete/' . $titulo->id ) }}"><span class="glyphicon glyphicon-remove"></span> Eliminar</a>
                 </div>
             </div>
         </div>
@@ -53,11 +53,11 @@
             </div>
 
             <div class="panel-body" style="padding:30px">
-            
+
                 <form action="{{ url('/inicio/' . $titulo->id ) }}" method="POST">
-                
+
                     {{ csrf_field() }}
-    
+
                     <div class="form-group">
                         <label>Nombre usuario:</label>
                         <input readonly="readonly" type="text" name="nombreUsuario" value="{{ Auth::user()->name }}" id="nombreUsuario" class="form-control">
@@ -69,10 +69,10 @@
                     </div>
                     <div class="form-group text-center">
                         <button type="submit" class="btn btn-primary" style="min-height:0px;margin:0px 0 0px 0">
-                            Comentar 
+                            Comentar
                         </button>
                     </div>
-                </form>                
+                </form>
             </div>
         </div>
     </div>
@@ -91,7 +91,7 @@
                     </p></br>
                     @if($coment->idUsuario === Auth::user()->id)
                     	<a style="color: green;" href="{{ url('/inicio/editar/' . $titulo->id ) }}"><span class="glyphicon glyphicon-wrench"></span> Editar</a>&nbsp;&nbsp;&nbsp;
-                        <a style="color: red;" href="{{ url('/inicio/eliminar' . $titulo->id ) }}"><span class="glyphicon glyphicon-remove"></span> Eliminar</a>
+                        <a style="color: red;" href="{{ url('/inicio/delete/' . $titulo->id ) }}"><span class="glyphicon glyphicon-remove"></span> Eliminar</a>
                     @endif
                 </div>
             </div>
@@ -112,11 +112,11 @@
             </div>
 
             <div class="panel-body" style="padding:30px">
-            
+
                 <form action="{{ url('/inicio/' . $titulo->id ) }}" method="POST">
-                
+
                     {{ csrf_field() }}
-    
+
                     <div class="form-group">
                         <label>Nombre usuario:</label>
                         <input readonly="readonly" type="text" name="nombreUsuario" value="{{ Auth::user()->name }}" id="nombreUsuario" class="form-control">
@@ -125,15 +125,15 @@
                         <!--<label>Id usuario:</label><label>Id Post:</label>-->
                         <input readonly="readonly" type="hidden" name="idUsuario" value="{{ Auth::user()->id }}" id="idUsuario" class="form-control">
                         <input readonly="readonly" type="hidden" name="idPost" value="{{$titulo->id}}" id="id" class="form-control">
-                    
-                    
+
+
                     </div>
                     <div class="form-group text-center">
                         <button type="submit" class="btn btn-primary" style="min-height:0px;margin:0px 0 0px 0">
-                            Comentar 
+                            Comentar
                         </button>
                     </div>
-                </form>                
+                </form>
             </div>
         </div>
     </div>
