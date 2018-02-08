@@ -41,6 +41,6 @@ Route::get('/inicio/editar/{id}', 'EditarController@getInfo');
 
 Route::post('/inicio/editar/{id}', 'EditarController@update');
 
-Route::get('/inicio/delete/{id}', 'DeleteController@index');
+Route::delete('/inicio/{id}', 'DeleteController@delete');
 
-Route::post('/inicio/delete/{id}', 'HomeController@deletePost');
+
