@@ -25,7 +25,7 @@
    					<p style="min-height:0px;margin:0px 0 0px 0">
                         <a  href="{{ url('/inicio/' . $post->id ) }}"><span class="glyphicon glyphicon-pencil"></span> Comentar</a>&nbsp;&nbsp;&nbsp;
                         <a style="color: green;" href="{{ url('/inicio/editar/' . $post->id ) }}"><span class="glyphicon glyphicon-wrench"></span> Editar</a>&nbsp;&nbsp;&nbsp;
-                        <a style="color: red;" href="{{ url('/inicio/delete/' . $post->id ) }}"><span class="glyphicon glyphicon-remove"></span> Eliminar</a>
+                        <a style="color: red;" href="{{ url('/inicio/confirmacion/' . $post->id ) }}"><span class="glyphicon glyphicon-remove"></span> Eliminar</a>
                         <?php $comentariosHechos= 0; ?>
                         @foreach( $countcoment as $key => $coment )
                             @if($post->id === $coment->idPost)
@@ -34,14 +34,6 @@
                         @endforeach
                         <span class="glyphicon glyphicon-comment" style="margin-left: 55%"> {{$comentariosHechos}}</span>
                     </p>
-                    <form action="{{ url('inicio/'.$post->id) }}" method="POST">
-                        {{ csrf_field() }}
-                        {{ method_field('DELETE') }}
-
-                        <button type="submit" class="btn btn-danger">
-                            <i class="fa fa-trash"></i> Delete
-                        </button>
-                </form>
                 </div>
             </div>
         </div>
