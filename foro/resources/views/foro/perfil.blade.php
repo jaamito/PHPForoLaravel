@@ -153,20 +153,23 @@
             </div>
             <div class="panel-body">
             <div class="row">
-                <div class=" col-md-9 col-lg-9 "> 
+                <div class=" col-md-9 col-lg-12 "> 
                 	<table class="table table-user-information">
                 		@if("1" === Auth::user()->admin)
                     		<?php  $cont2 = 1; ?>
                     		<?php  $ad = 1; ?>
                     		@foreach( $arrayUser as $key => $use )
                     				<tr>
-                    					<td>#{{$cont2}} Usuario:</td>
+                    					<td>Usuario #{{$cont2}}</td>
                     					<td>{{$use->name}}</td>
                     					@if($use->admin === "1")
                     						<td>Administrador</td>
                     					@else
                     						<td>Usuario</td>
                     					@endif
+                    					<td><a href="#" class="btn btn-danger btn-sm" style="background: red;">
+        				<span class="glyphicon glyphicon-fire"></span>Eliminar
+        			</a></td>
                     				<?php $cont2++; ?>
                     				</tr>
                     		@endforeach
