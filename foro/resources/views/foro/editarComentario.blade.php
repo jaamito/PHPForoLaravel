@@ -22,7 +22,7 @@
                     <textarea id="texto" name="texto" cols="44" class="form-control" required>{{$arrayComentarios->texto}}</textarea>
                     <!--<label>Id usuario:</label><label>Id Post:</label>-->
                     <input readonly="readonly" type="hidden" name="idUsuario" value="{{ Auth::user()->id }}" id="idUsuario" class="form-control">
-                    <input readonly="readonly" type="text" name="idPost" value="{{$arrayComentarios->idPost}}" id="id" class="form-control">
+                    <input readonly="readonly" type="hidden" name="idPost" value="{{$arrayComentarios->idPost}}" id="id" class="form-control">
                 </div>
                 <div class="form-group text-center">
                     <button type="submit" class="btn btn-primary" style="min-height:0px;margin:0px 0 0px 0">

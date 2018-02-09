@@ -33,7 +33,7 @@
                         {{$coment->texto}}
                     </p></br>
                         <a style="color: green;" href="{{ url('/inicio/comentario/' . $coment->id ) }}"><span class="glyphicon glyphicon-wrench"></span> Editar</a>&nbsp;&nbsp;&nbsp;
-                        <a style="color: red;" href="{{ url('/inicio/delete/' . $titulo->id ) }}"><span class="glyphicon glyphicon-remove"></span> Eliminar</a>
+                        <a style="color: red;" href="{{ url('/inicio/deleteComentario/' . $coment->id ) }}"><span class="glyphicon glyphicon-remove"></span> Eliminar</a>
                 </div>
             </div>
         </div>
@@ -90,9 +90,10 @@
                         {{$coment->texto}}
                     </p></br>
                     @if($coment->idUsuario === Auth::user()->id)
-                    	<a style="color: green;" href="{{ url('/inicio/comentario/' . $titulo->id ) }}"><span class="glyphicon glyphicon-wrench"></span> Editar</a>&nbsp;&nbsp;&nbsp;
-                      <a style="color: red;" href="{{ url('/inicio/delete/' . $titulo->id ) }}"><span class="glyphicon glyphicon-remove"></span> Eliminar</a>
+                    <a style="color: green;" href="{{ url('/inicio/comentario/' . $coment->id ) }}"><span class="glyphicon glyphicon-wrench"></span> Editar</a>&nbsp;&nbsp;&nbsp;
+                    <a style="color: red;" href="{{ url('/inicio/deleteComentario/' . $coment->id ) }}"><span class="glyphicon glyphicon-remove"></span> Eliminar</a>
                     @endif
+                </div>
                 </div>
             </div>
         </div>
