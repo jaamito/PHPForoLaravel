@@ -118,5 +118,69 @@
                 </div>
                </div>
               </div>
+         <div class="col-md-6">
+          <div class="panel panel-info">
+            <div class="panel-heading">
+              <h3 class="panel-title">Post Creados por #{{Auth::user()->name}}</h3>
+            </div>
+            <div class="panel-body">
+            <div class="row">
+                <div class=" col-md-9 col-lg-9 "> 
+                	<table class="table table-user-information">
+                    		<?php  $cont = 0; ?>
+                    		<?php  $cont2 = 1; ?>
+                    		@foreach( $arrayPost as $key => $post )
+                    			@if(Auth::user()->id === $post->idUsuario)
+                    				<?php $posit = $post->titulo; ?>
+                    				<tr>
+                    					<td>#{{$cont2}} Post:</td>
+                    					<td>{{$posit}}</td>
+                    				<?php $cont++; ?>
+                    				<?php $cont2++; ?>
+                    				</tr>
+                    			@endif
+                    		@endforeach
+                  	</table>
+                </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="col-md-6">
+          <div class="panel panel-info">
+            <div class="panel-heading">
+              <h3 class="panel-title">Usuarios</h3>
+            </div>
+            <div class="panel-body">
+            <div class="row">
+                <div class=" col-md-9 col-lg-9 "> 
+                	<table class="table table-user-information">
+                		@if("1" === Auth::user()->admin)
+                    		<?php  $cont2 = 1; ?>
+                    		<?php  $ad = 1; ?>
+                    		@foreach( $arrayUser as $key => $use )
+                    				<tr>
+                    					<td>#{{$cont2}} Usuario:</td>
+                    					<td>{{$use->name}}</td>
+                    					@if($use->admin === "1")
+                    						<td>Administrador</td>
+                    					@else
+                    						<td>Usuario</td>
+                    					@endif
+                    				<?php $cont2++; ?>
+                    				</tr>
+                    		@endforeach
+                    	@else
+                    		<tr>
+                    			<H1 style="text-align: center; color: red;">NO ERES ADMIN!</H1>
+                    		</tr>
+
+                    	@endif
+                  	</table>
+                </div>
+            </div>
+           </div>
+          </div>
+         </div>
 @endsection
 

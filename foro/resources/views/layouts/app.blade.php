@@ -8,86 +8,90 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
-    <title>{{ config('app.name', 'Laravel Foro') }}</title>
+    <title>Laravel foro</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/app2.css') }}" rel="stylesheet">
     <link href="{{ asset('js/app2.js') }}" rel="stylesheet">
-
+    <style type="text/css">
+       
+    </style>
 </head>
-<body>
-    <div id="app">
-        <nav class="navbar navbar-default navbar-static-top">
-            <div class="container">
-                <div class="navbar-header">
+<nav class="navbar navbar-inverse" role="navigation">
+  <!-- El logotipo y el icono que despliega el menú se agrupan
+       para mostrarlos mejor en los dispositivos móviles -->
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse"
+            data-target=".navbar-ex1-collapse">
+      <span class="sr-only">Desplegar navegación</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
 
-                    <!-- Collapsed Hamburger -->
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse" aria-expanded="false">
-                        <span class="sr-only">Toggle Navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                        
-                    <!-- Branding Image -->
-                    <div style="margin-left: -8%">
-                        <div style="margin-top: -5%">
-                            <a class="navbar-brand" href="{{ url('inicio') }}">
-                                <IMG SRC="{{ asset('img/titulo.png') }}" WIDTH=160 HEIGHT="40" ALT="Laravel Foro">
-                            </a>
-                        </div>
-                    </div>
-                </div>
+    </button>
+        <a class="navbar-brand" href="{{ url('inicio') }}">
+            <span class="glyphicon glyphicon-home" style="color: white;"></span>  INICIO
+        </a>
+        
+  </div>
+  <!--INVITADO-->
+    @guest
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="{{ route('login') }}">Login</a></li>
+            <li><a href="{{ route('register') }}">Registrar</a></li>
+    @else
+    <!--INVITADO-->
+  <!-- Agrupar los enlaces de navegación, los formularios y cualquier
+       otro elemento que se pueda ocultar al minimizar la barra -->
+  <div class="collapse navbar-collapse navbar-ex1-collapse">
+    <ul class="nav navbar-nav">
+        <li><a href="#" role="button"><span class="glyphicon glyphicon-plus" style="color: green;"></span> Crear Tag </a></li>
+        <li><a href="#" role="button"><span class="glyphicon glyphicon-plus" style="color: green;"></span> Crear Hashtag </a></li>
+        <li><a href="{{ url('inicio/crearPost') }}"  role="button"><span class="glyphicon glyphicon-plus" style="color: green;"></span> Crear Post </a></li>
+        <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+          Menú #1 <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Acción #1</a></li>
+          <li><a href="#">Acción #2</a></li>
+          <li><a href="#">Acción #3</a></li>
+          <li class="divider"></li>
+          <li><a href="#">Acción #4</a></li>
+          <li class="divider"></li>
+          <li><a href="#">Acción #5</a></li>
+        </ul>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Buscar Tag">
+        </div>
+            <button type="submit" class="btn btn-default">Buscar</button>
+      </form>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
+            {{ Auth::user()->name }} <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu" style="text-align: center;">
+            <li><a href="{{ url('inicio/perfil') }}" role="button"><span class="glyphicon glyphicon-user"></span> Ver tu Perfil </a></li>
+            <li>
+                <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                    Logout <span class="glyphicon glyphicon-log-out"></span>
+                </a>
 
-                <div class="collapse navbar-collapse" id="app-navbar-collapse">
-                    <!-- Left Side Of Navbar -->
-                    
-
-                    <!-- Right Side Of Navbar -->
-                    <ul class="nav navbar-nav navbar-right">
-                        <!-- Authentication Links -->
-                        @guest
-                            <li><a href="{{ route('login') }}">Login</a></li>
-                            <li><a href="{{ route('register') }}">Registrar</a></li>
-                        @else
-                        
-                            <div class="collapse navbar-collapse" id="app-navbar-collapse">
-                            <!-- Left Side Of Navbar -->
-                            <!-- Right Side Of Navbar -->
-                            <ul class="nav navbar-nav navbar-right">
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                    </a>
-
-                            <ul class="dropdown-menu">
-                            	<li><a href="{{ url('inicio/perfil') }}" class="btn btn-success " role="button"><span class="glyphicon glyphicon-user"></span> Ver tu Perfil </a></li>
-                            	<li><a href="#" role="button"><span class="glyphicon glyphicon-plus"></span> Crear Tag </a></li>
-                                <li><a href="#" role="button"><span class="glyphicon glyphicon-plus"></span> Crear Hashtag </a></li>
-                                <li><a href="{{ url('inicio/crearPost') }}"  role="button"><span class="glyphicon glyphicon-plus"></span> Crear Post </a></li>
-                            	<li role="presentation" class="divider"></li>
-                                <li>
-                                    <a href="{{ route('logout') }}" class="btn btn-danger "
-                                            onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                            Logout <span class="glyphicon glyphicon-log-out"></span>
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                            {{ csrf_field() }}
-                                    </form>
-                                </li>
-                            </ul>
-                           
-                        @endguest
-                    </ul>
-                </div>
-            </div>
-        </nav>
-
-        @yield('content')
-    </div>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    {{ csrf_field() }}
+                </form>
+            </li>
+        </ul>
+  </div>
+</nav>
+@endguest
+@yield('content')
+</div>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
