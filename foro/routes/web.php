@@ -44,3 +44,7 @@ Route::post('/inicio/editar/{id}', 'EditarController@update');
 Route::get('/inicio/confirmacion/{id}', 'DeleteController@confirm');
 
 Route::delete('/inicio/confirmacion/{id}', 'DeleteController@delete');
+
+Route::get('/inicio/comentario/{id}', 'ComentariosController@getComent');
+
+Route::post('/inicio/comentario/{id}', 'ComentariosController@update');
