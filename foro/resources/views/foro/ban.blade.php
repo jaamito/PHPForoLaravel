@@ -27,6 +27,8 @@
                         <!-- -->
                         <label>Usuario a banear:</label>
                         <input readonly="readonly" type="text" name="" value="{{$user->name}}" id="nombreUsuario" class="form-control">
+                        <label>Motivo:</label>
+                        <textarea id="motivo" name="motivo" cols="44" class="form-control" required></textarea> 
 
                         <input readonly="readonly" type="hidden" name="banear" id="banear" class="form-control" value="0" >
 
@@ -75,6 +77,7 @@
 
                         <input readonly="readonly" type="hidden" name="banear" id="banear" class="form-control" value="1" >
 
+                        <input readonly="readonly" type="hidden" name="motivo" value="ninguno" id="banear" class="form-control">
                         <!--Id usuario-->
                         <input readonly="readonly" type="hidden" name="idUsuario" value="{{$id}}" id="idUsuario" class="form-control">
 

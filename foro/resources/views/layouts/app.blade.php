@@ -18,6 +18,7 @@
        
     </style>
 </head>
+@if(Auth::user()->ban === "1")
 <nav class="navbar navbar-inverse" role="navigation">
   <!-- El logotipo y el icono que despliega el menú se agrupan
        para mostrarlos mejor en los dispositivos móviles -->
@@ -44,7 +45,6 @@
     <!--INVITADO-->
   <!-- Agrupar los enlaces de navegación, los formularios y cualquier
        otro elemento que se pueda ocultar al minimizar la barra -->
-   	@if( Auth::user()->ban === "1" )
   <div class="collapse navbar-collapse navbar-ex1-collapse">
     <ul class="nav navbar-nav">
         <li><a href="#" role="button"><span class="glyphicon glyphicon-plus" style="color: green;"></span> Crear Tag </a></li>
@@ -90,29 +90,39 @@
         </ul>
   </div>
 </nav>
-@else
-<ul class="nav navbar-nav navbar-right">
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
-            {{ Auth::user()->name }} <span class="caret"></span>
-        </a>
-        <ul class="dropdown-menu" style="text-align: center;">
-            <li>
-                <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                    Logout <span class="glyphicon glyphicon-log-out"></span>
-                </a>
-
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                    {{ csrf_field() }}
-                </form>
-            </li>
-</ul>
-@endif
 @endguest
 @yield('content')
 </div>
-
+    
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>
+@else
+<style type="text/css">
+.centrar{
+  text-align: center;
+  margin-top: 10%;
+  width: 50%;
+  margin-left: 25%;
+}
+</style>
+<div class="panel panel-danger centrar">
+ 
+  <div class="panel-heading">ESTAS BANEADO/A</div>
+  <div class="panel-body" style="text-align: left;">
+    <h2>Usuario Baneado/a:<strong> {{Auth::user()->name}}</strong></h2>
+    <h3 style="text-align: center"><u>Motivo</u></h3>
+    <p>{{Auth::user()->motivo}}</p>
+  </div>
+  <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                    <button type="button" class="btn btn-primary">Volver al Inicio</button></a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    {{ csrf_field() }}
+                </form>
+  </br>
+    <p>  </p>
+</div>
+
+
+@endif

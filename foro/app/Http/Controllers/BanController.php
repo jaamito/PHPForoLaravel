@@ -20,6 +20,7 @@ class BanController extends Controller
    public function updateban(Request $request, $id){
       $banner= User::find($id);
       $banner->ban = $request->input('banear');
+      $banner->motivo = $request->input('motivo');
       $banner->save();
       $arrayUser = User::all();
       $arrayPost = Post::all();

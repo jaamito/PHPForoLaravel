@@ -27,6 +27,8 @@
                 <div class="panel-heading"><h4><strong>{{$post->titulo}}</strong></h4><div style="text-align: right;">Creador: {{$post->nombreUsuario}}</div><div style="text-align: right;">{{$post->created_at}}</div></div>
 
                 <div class="panel-body">
+                
+                @if(Auth::user()->ban === "1")
    					<p style="min-height:0px;margin:0px 0 0px 0">
                         <a  href="{{ url('/inicio/' . $post->id ) }}"><span class="glyphicon glyphicon-pencil"></span> Comentar</a>&nbsp;&nbsp;&nbsp;
                         <a style="color: green;" href="{{ url('/inicio/editar/' . $post->id ) }}"><span class="glyphicon glyphicon-wrench"></span> Editar</a>&nbsp;&nbsp;&nbsp;
@@ -39,6 +41,11 @@
                         @endforeach
                         <span class="glyphicon glyphicon-comment" style="margin-left: 55%"> {{$comentariosHechos}}</span>
                     </p>
+                    @else
+                    <p style="min-height:0px;margin:0px 0 0px 0">
+                        <button type="button" class="btn btn-warning">Este usuario esta BANEADO asi que no se puede comentar este Post.</button>
+                    </p>
+                @endif
                 </div>
             </div>
         </div>
@@ -52,6 +59,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading"><h4><strong>{{$post->titulo}}</strong></h4><div style="text-align: right;">Creador: {{$post->nombreUsuario}}</div><div style="text-align: right;">{{$post->created_at}}</div></div>
                 <div class="panel-body">
+                @if(Auth::user()->ban === "1")
                     <p style="min-height:0px;margin:0px 0 0px 0">
                         <a  href="{{ url('/inicio/' . $post->id ) }}"><span class="glyphicon glyphicon-pencil"></span> Comentar</a>&nbsp;&nbsp;&nbsp;
                         @if($post->idUsuario === Auth::user()->id)
@@ -66,6 +74,11 @@
                         @endforeach
                         <span class="glyphicon glyphicon-comment" style="margin-left: 90%"> {{$comentariosHechos}}</span>
                     </p>
+                @else
+                    <p style="min-height:0px;margin:0px 0 0px 0">
+                        <button type="button" class="btn btn-warning">Este usuario esta BANEADO asi que no se puede comentar este Post.</button>
+                    </p>
+                @endif
                 </div>
             </div>
         </div>

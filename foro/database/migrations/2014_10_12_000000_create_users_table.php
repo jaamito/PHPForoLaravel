@@ -23,6 +23,7 @@ class CreateUsersTable extends Migration
             $table->string('telefono');
             $table->string('admin');
             $table->string('ban')->default("1");
+            $table->string('motivo')->default("ninguno");
             $table->rememberToken();
             $table->timestamps();
         });
