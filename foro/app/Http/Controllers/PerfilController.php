@@ -34,4 +34,13 @@ class PerfilController extends Controller
         $user->save();
         return view('foro.bienEditar');
     }
+    public function deleteUser(Request $request) {
+        $user= User::find($request->input('id'));
+        $user->delete();
+        return view('foro.delete');
+    }
+    public function confirmUser(Request $request){
+      $user= User::find($request->input('id'));
+      return view('foro.confirmarDeleteUser', array('infoEdit'=>$user));
+    }
 }

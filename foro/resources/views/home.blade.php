@@ -55,7 +55,7 @@
                         <a  href="{{ url('/inicio/' . $post->id ) }}"><span class="glyphicon glyphicon-pencil"></span> Comentar</a>&nbsp;&nbsp;&nbsp;
                         @if($post->idUsuario === Auth::user()->id)
                         <a style="color: green;" href="{{ url('/inicio/editar/' . $post->id ) }}"><span class="glyphicon glyphicon-wrench"></span> Editar</a>&nbsp;&nbsp;&nbsp;
-                        <a style="color: red;" href="{{ url('/inicio/delete/' . $post->id ) }}"><span class="glyphicon glyphicon-remove"></span> Eliminar</a>
+                        <a style="color: red;" href="{{ url('/inicio/confirmacion/' . $post->id ) }}"><span class="glyphicon glyphicon-remove"></span> Eliminar</a>
                     @endif
                     <?php $comentariosHechos= 0; ?>
                         @foreach( $countcoment as $key => $coment )

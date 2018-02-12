@@ -54,7 +54,7 @@
                 	<a href="{{ url('/inicio/verPerfil/editarPerfil') }}" class="btn btn-info btn-lg" style="background: green;">
           				<span class="glyphicon glyphicon-wrench"></span> Editar
         			</a>
-        			<a href="#" class="btn btn-danger btn-lg" style="background: red;">
+        			<a href="{{ url('/inicio/verPerfil/confirmarDeleteUser') }}" class="btn btn-danger btn-lg" style="background: red;">
         				<span class="glyphicon glyphicon-fire"></span>Eliminar
         			</a>
                 </div>
