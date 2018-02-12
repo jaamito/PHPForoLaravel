@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Post;
 use App\Comentarios;
+use App\User;
 use Illuminate\Support\Facades\Validator;
 
 class HomeController extends Controller
@@ -28,7 +29,9 @@ class HomeController extends Controller
     {
         $arrayPost = Post::select()->orderBy('id', 'desc')->get();
         $countcoment = Comentarios::all();
-        return view('home', array('arrayPost'=>$arrayPost,'countcoment'=>$countcoment));
+        $contpost = Post::all();
+        $contuser = User::all();
+        return view('home', array('arrayPost'=>$arrayPost,'countcoment'=>$countcoment,'$cont'=>$countcoment,'$cont1'=>$contpost,'$cont2'=>$contuser));
     }
 
     public function show($id)

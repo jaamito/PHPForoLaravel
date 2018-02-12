@@ -4,6 +4,10 @@
         margin-left: 68%;
         position: absolute ;
     }
+    .contador{
+        position: absolute;
+        margin-left: 80%;
+    }
 </style>
 @section('content')
 <div class="container" style="margin-right: 6%;">
@@ -17,7 +21,7 @@
 @if("1" === Auth::user()->admin)
 <div class="container">
     <div class="row">
-        <div class="col-md-8 col-md-offset-0">
+        <div class="col-md-8">
             <div class="panel panel-default">
                 <div class="panel-heading"><h4><strong>{{$post->titulo}}</strong></h4><div style="text-align: right;">Creador: {{$post->nombreUsuario}}</div><div style="text-align: right;">{{$post->created_at}}</div></div>
 
