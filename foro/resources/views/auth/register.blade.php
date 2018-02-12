@@ -110,7 +110,7 @@
                                 @endif
                             </div>
                         </div>
-                        <!--/TLF-->
+                        <!--ban-->
                         <!--Admin-->
                         <div class="form-group{{ $errors->has('admin') ? ' has-error' : '' }}">
                             <label for="admin" class="col-md-4 control-label"><span class="glyphicon glyphicon-check"></span>&nbsp;Admin</label>

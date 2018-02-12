@@ -44,6 +44,7 @@
     <!--INVITADO-->
   <!-- Agrupar los enlaces de navegación, los formularios y cualquier
        otro elemento que se pueda ocultar al minimizar la barra -->
+   	@if( Auth::user()->ban === "1" )
   <div class="collapse navbar-collapse navbar-ex1-collapse">
     <ul class="nav navbar-nav">
         <li><a href="#" role="button"><span class="glyphicon glyphicon-plus" style="color: green;"></span> Crear Tag </a></li>
@@ -89,6 +90,24 @@
         </ul>
   </div>
 </nav>
+@else
+<ul class="nav navbar-nav navbar-right">
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
+            {{ Auth::user()->name }} <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu" style="text-align: center;">
+            <li>
+                <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                    Logout <span class="glyphicon glyphicon-log-out"></span>
+                </a>
+
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    {{ csrf_field() }}
+                </form>
+            </li>
+</ul>
+@endif
 @endguest
 @yield('content')
 </div>

@@ -22,6 +22,7 @@ class CreateUsersTable extends Migration
             $table->string('edad');
             $table->string('telefono');
             $table->string('admin');
+            $table->string('ban')->default("1");
             $table->rememberToken();
             $table->timestamps();
         });

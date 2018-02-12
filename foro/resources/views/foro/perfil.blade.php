@@ -167,9 +167,11 @@
                     					@else
                     						<td>Usuario</td>
                     					@endif
-                    					<td><a href="#" class="btn btn-danger btn-sm" style="background: red;">
-        				<span class="glyphicon glyphicon-fire"></span>Eliminar
-        			</a></td>
+                    					@if($use->ban === "1")
+                    						<td><a href="{{ url('/inicio/banear/'. $use->id) }}" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-fire"></span> Banear</a></td>
+                    					@else
+                    						<td><a href="{{ url('/inicio/banear/'. $use->id) }}" class="btn btn-info btn-sm" ><span class="glyphicon glyphicon-fire"></span> Quitar Ban</a></td>
+                    					@endif
                     				<?php $cont2++; ?>
                     				</tr>
                     		@endforeach

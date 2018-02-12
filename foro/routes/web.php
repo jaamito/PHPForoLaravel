@@ -17,6 +17,12 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::get('/inicio/banear/{id}', 'BanController@indexBan');
+
+Route::post('/inicio/banear/{id}', 'BanController@updateBan');
+
+Route::get('/inicio/banear/{id}', 'BanController@infoBan');
+
 Route::get('/inicio/perfil','PerfilController@perfil');
 
 Route::get('/inicio','HomeController@index');
@@ -52,3 +58,8 @@ Route::post('/inicio/comentario/{id}', 'ComentariosController@update');
 Route::get('/inicio/deleteComentario/{id}', 'ComentarioDeleteController@confirm');
 
 Route::delete('/inicio/deleteComentario/{id}', 'ComentarioDeleteController@delete');
+
+
+
+
+
