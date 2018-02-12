@@ -52,3 +52,7 @@ Route::post('/inicio/comentario/{id}', 'ComentariosController@update');
 Route::get('/inicio/deleteComentario/{id}', 'ComentarioDeleteController@confirm');
 
 Route::delete('/inicio/deleteComentario/{id}', 'ComentarioDeleteController@delete');
+
+Route::get('/inicio/verPerfil/editarPerfil', 'PerfilController@editarP');
+
+Route::post('/inicio/verPerfil/editarPerfil', 'PerfilController@update');

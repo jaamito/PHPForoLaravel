@@ -12,7 +12,26 @@ class PerfilController extends Controller
     {
     	$arrayUser = User::all();
     	$arrayPost = Post::all();
-        $arrayComent = Comentarios::all();
-        return view('foro.perfil', array('arrayPost'=>$arrayPost,'arrayComent'=>$arrayComent,'arrayUser'=>$arrayUser));
+      $arrayComent = Comentarios::all();
+      return view('foro.perfil', array('arrayPost'=>$arrayPost,'arrayComent'=>$arrayComent,'arrayUser'=>$arrayUser));
+    }
+    public function editarP()
+    {
+    	$arrayUser = User::all();
+    	$arrayPost = Post::all();
+      $arrayComent = Comentarios::all();
+      return view('foro.editarPerfil', array('arrayPost'=>$arrayPost,'arrayComent'=>$arrayComent,'arrayUser'=>$arrayUser));
+    }
+    public function update(Request $request){
+        $user= User::find($request->input('id'));
+        $user->id = $request->input('id');
+        $user->name = $request->input('name');
+        $user->email = $request->input('email');
+        $user->direccion = $request->input('direccion');
+        $user->edad = $request->input('edad');
+        $user->telefono = $request->input('telefono');
+        $user->password=$request->input('password');
+        $user->save();
+        return view('foro.bienEditar');
     }
 }

@@ -3,7 +3,7 @@
 	.datos{
 		position: absolute;
 		margin-left: 52%;
-		margin-bottom: 40%; 
+		margin-bottom: 40%;
 	}
 	.anuncio2{
 		position: absolute;
@@ -24,7 +24,7 @@
             <div class="panel-body">
             <div class="row">
                 <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="http://www.netmanager.cl/netmanager/wp-content/uploads/avatar-1-300x300.png" class="img-circle img-responsive"> </div>
-                <div class=" col-md-9 col-lg-9 "> 
+                <div class=" col-md-9 col-lg-9 ">
                 	<table class="table table-user-information">
                     	<tr>
                         	<td>Nombre:</td>
@@ -51,7 +51,7 @@
                         	<td>{{Auth::user()->created_at}}</td>
                       	</tr>
                   	</table>
-                	<a href="#" class="btn btn-info btn-lg" style="background: green;">
+                	<a href="{{ url('/inicio/verPerfil/editarPerfil') }}" class="btn btn-info btn-lg" style="background: green;">
           				<span class="glyphicon glyphicon-wrench"></span> Editar
         			</a>
         			<a href="#" class="btn btn-danger btn-lg" style="background: red;">
@@ -70,7 +70,7 @@
             <div class="panel-body">
               <div class="row">
                 <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="http://unvex-sd.com/wp-content/uploads/2017/07/The-Event-300x300.png" class="img-circle img-responsive"> </div>
-                <div class=" col-md-9 col-lg-9 "> 
+                <div class=" col-md-9 col-lg-9 ">
                   <table class="table table-user-information">
                       <tr>
                         <td>Comentarios realizados:</td>
@@ -125,7 +125,7 @@
             </div>
             <div class="panel-body">
             <div class="row">
-                <div class=" col-md-9 col-lg-9 "> 
+                <div class=" col-md-9 col-lg-9 ">
                 	<table class="table table-user-information">
                     		<?php  $cont = 0; ?>
                     		<?php  $cont2 = 1; ?>
@@ -153,7 +153,7 @@
             </div>
             <div class="panel-body">
             <div class="row">
-                <div class=" col-md-9 col-lg-9 "> 
+                <div class=" col-md-9 col-lg-9 ">
                 	<table class="table table-user-information">
                 		@if("1" === Auth::user()->admin)
                     		<?php  $cont2 = 1; ?>
@@ -183,4 +183,3 @@
           </div>
          </div>
 @endsection
-
