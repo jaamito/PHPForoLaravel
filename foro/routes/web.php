@@ -67,3 +67,6 @@ Route::get('/inicio/verPerfil/confirmarDeleteUser', 'PerfilController@confirmUse
 
 Route::delete('/inicio/verPerfil/confirmarDeleteUser', 'PerfilController@deleteUser');
 
+Route::get('/inicio/verPerfil/cambiarPass', 'PerfilController@changeP');
+
+Route::post('/inicio/verPerfil/cambiarPass', 'PerfilController@updateP');

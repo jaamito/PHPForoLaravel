@@ -43,4 +43,17 @@ class PerfilController extends Controller
       $user= User::find($request->input('id'));
       return view('foro.confirmarDeleteUser', array('infoEdit'=>$user));
     }
+    public function changeP(){
+      return view('foro.cambiarPass');
+    }
+    public function updateP(Request $request){
+      $user= User::find($request->input('id'));
+      $user->password=$request->input('newPassword');
+      $user->save();
+      $arrayUser = User::all();
+      $arrayPost = Post::all();
+      $arrayComent = Comentarios::all();
+      return view('foro.perfil', array('arrayPost'=>$arrayPost,'arrayComent'=>$arrayComent,'arrayUser'=>$arrayUser));
+
+    }
 }

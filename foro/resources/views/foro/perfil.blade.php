@@ -52,11 +52,14 @@
                       	</tr>
                   	</table>
                 	<a href="{{ url('/inicio/verPerfil/editarPerfil') }}" class="btn btn-info btn-lg" style="background: green;">
-          				<span class="glyphicon glyphicon-wrench"></span> Editar
-        			</a>
-        			<a href="{{ url('/inicio/verPerfil/confirmarDeleteUser') }}" class="btn btn-danger btn-lg" style="background: red;">
-        				<span class="glyphicon glyphicon-fire"></span>Eliminar
-        			</a>
+          					<span class="glyphicon glyphicon-wrench"></span> Editar
+        					</a>
+        					<a href="{{ url('/inicio/verPerfil/confirmarDeleteUser') }}" class="btn btn-danger btn-lg" style="background: red;">
+        						<span class="glyphicon glyphicon-fire"></span>Eliminar
+        					</a>
+									<a href="{{ url('/inicio/verPerfil/cambiarPass') }}" class="btn btn-info btn-lg" style="background: green;">
+          					<span class="glyphicon glyphicon-wrench"></span> Cambiar Contraseña
+        					</a>
                 </div>
             </div>
            </div>

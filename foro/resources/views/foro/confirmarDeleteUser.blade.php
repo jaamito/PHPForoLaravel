@@ -54,8 +54,8 @@
                       Eliminar
                     </button>
                   </form>
-                  <a href="{{ url('inicio') }}" class="btn btn-success" style="padding:8px 100px;margin-top:25px;">
-                    Inicio
+                  <a href="{{ url('inicio/perfil') }}" class="btn btn-success" style="padding:8px 100px;margin-top:25px;">
+                    Volver al Perfil
                   </a>
               </ul>
             </div>
