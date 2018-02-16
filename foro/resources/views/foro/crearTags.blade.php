@@ -9,7 +9,7 @@
             <div class="panel-heading">
                 <h3 class="panel-title text-center">
                     <span class="glyphicon glyphicon-send" aria-hidden="true"></span>
-                    Añadir Post
+                    Añadir Tag
                 </h3>
             </div>
 
@@ -24,14 +24,9 @@
                         <label>Nombre usuario:</label>
                         <input readonly="readonly" type="text" name="nombreUsuario" value="{{ Auth::user()->name }}" id="nombreUsuario" class="form-control">
 
-                        <label for="titulo">Titulo del Post</label>
+                        <label for="titulo">Tag</label>
                         <!-- -->
                         <input type="text" name="titulo" id="titulo" class="form-control" required>
-
-                        <label for="texto">Texto Principal del Post</label>
-                        <!-- -->
-                        <textarea id="texto" name="texto" cols="44" class="form-control" required></textarea>
-
                         <!--Id usuario-->
                         <input readonly="readonly" type="hidden" name="idUsuario" value="{{ Auth::user()->id }}" id="idUsuario" class="form-control">
 
