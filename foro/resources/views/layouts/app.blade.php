@@ -15,7 +15,7 @@
     <link href="{{ asset('css/app2.css') }}" rel="stylesheet">
     <link href="{{ asset('js/app2.js') }}" rel="stylesheet">
     <style type="text/css">
-       
+
     </style>
 </head>
 @if(Auth::user()->ban === "1")
@@ -34,7 +34,7 @@
         <a class="navbar-brand" href="{{ url('inicio') }}">
             <span class="glyphicon glyphicon-home" style="color: white;"></span>  INICIO
         </a>
-        
+
   </div>
   <!--INVITADO-->
     @guest
@@ -47,21 +47,15 @@
        otro elemento que se pueda ocultar al minimizar la barra -->
   <div class="collapse navbar-collapse navbar-ex1-collapse">
     <ul class="nav navbar-nav">
-        <li><a href="#" role="button"><span class="glyphicon glyphicon-plus" style="color: green;"></span> Crear Tag </a></li>
-        <li><a href="#" role="button"><span class="glyphicon glyphicon-plus" style="color: green;"></span> Crear Hashtag </a></li>
         <li><a href="{{ url('inicio/crearPost') }}"  role="button"><span class="glyphicon glyphicon-plus" style="color: green;"></span> Crear Post </a></li>
         <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-          Menú #1 <b class="caret"></b>
+          Tags <b class="caret"></b>
         </a>
         <ul class="dropdown-menu">
-          <li><a href="#">Acción #1</a></li>
-          <li><a href="#">Acción #2</a></li>
-          <li><a href="#">Acción #3</a></li>
+          <li><a href="{{ url('inicio/crearTag') }}" role="button"><span class="glyphicon glyphicon-plus" style="color: green;"></span> Crear Tag </a></li>
           <li class="divider"></li>
-          <li><a href="#">Acción #4</a></li>
-          <li class="divider"></li>
-          <li><a href="#">Acción #5</a></li>
+          <li><a href="{{ url('inicio/verTags') }}" role="button"><span class="glyphicon glyphicon-plus" style="color: green;"></span> Ver Tags </a></li>
         </ul>
       </li>
     </ul>
@@ -87,7 +81,7 @@
 @endguest
 @yield('content')
 </div>
-    
+
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
 </body>
@@ -102,7 +96,7 @@
 }
 </style>
 <div class="panel panel-danger centrar">
- 
+
   <div class="panel-heading">ESTAS BANEADO/A</div>
   <div class="panel-body" style="text-align: left;">
     <h2>Usuario Baneado/a:<strong> {{Auth::user()->name}}</strong></h2>
