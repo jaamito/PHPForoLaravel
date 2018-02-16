@@ -55,7 +55,7 @@
         <ul class="dropdown-menu">
           <li><a href="{{ url('inicio/crearTag') }}" role="button"><span class="glyphicon glyphicon-plus" style="color: green;"></span> Crear Tag </a></li>
           <li class="divider"></li>
-          <li><a href="{{ url('inicio/verTags') }}" role="button"><span class="glyphicon glyphicon-plus" style="color: green;"></span> Ver Tags </a></li>
+          <li><a href="{{ url('inicio/verTags') }}" role="button"><span class="glyphicon glyphicon-eye-open" style="color: green;"></span> Ver Tags </a></li>
         </ul>
       </li>
     </ul>

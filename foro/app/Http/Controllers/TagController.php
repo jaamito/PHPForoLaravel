@@ -25,4 +25,16 @@ class TagController extends Controller
       $tag->save();
       return view('foro.bien');
   }
+  public function delete($id) {
+
+      $tag = Tag::find($id);
+
+      $tag->delete();
+      $arrayTags = Tag::select()->orderBy('id', 'desc')->get();
+      return view('foro.verTags', array('arrayTags'=>$arrayTags));
+  }
+  public function confirm($id){
+    $arrayTags = Tag::find($id);
+    return view('foro.confirmarDeleteTag', array('id'=>$id, 'infoEdit'=>$arrayTags));
+  }
 }
