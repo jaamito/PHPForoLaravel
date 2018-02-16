@@ -45,7 +45,7 @@
                       <td>{{Auth::user()->name}}</td>
                       <td>{{$tag->created_at}}</td>
                       <td>1</td>
-                      <td><a style="color: red;" href="{{ url('/inicio/confirmacion/') }}"><span class="glyphicon glyphicon-remove"></span> Eliminar</a></td>
+                      <td><a style="color: red;" href="{{ url('/inicio/confirmDeleteTag/'.$tag->id) }}"><span class="glyphicon glyphicon-remove"></span> Eliminar</a></td>
                     </tr>
                   @endif
                 @endforeach
@@ -74,7 +74,7 @@
                       <td>{{Auth::user()->name}}</td>
                       <td>{{$tag->created_at}}</td>
                       <td>1</td>
-                      <td><a style="color: red;" href="{{ url('/inicio/confirmacion/') }}"><span class="glyphicon glyphicon-remove"></span> Eliminar</a></td>
+                      <td><a style="color: red;" href="{{ url('/inicio/confirmDeleteTag/'.$tag->id) }}"><span class="glyphicon glyphicon-remove"></span> Eliminar</a></td>
                     </tr>
                   @endif
                 @endforeach

@@ -19,6 +19,7 @@ class TagController extends Controller
       return view('foro.bien');
   }
 
+
   public function buscar(Request $request){
 
         $buscar = $request->input('buscar');
@@ -27,4 +28,17 @@ class TagController extends Controller
         $contuser = User::all();
         return view('foro.verTags', array('arrayTags'=>$arrayTags, '$cont1'=>$contTag,'$cont2'=>$contuser));
     }
+
+  public function delete($id) {
+
+      $tag = Tag::find($id);
+
+      $tag->delete();
+      $arrayTags = Tag::select()->orderBy('id', 'desc')->get();
+      return view('foro.verTags', array('arrayTags'=>$arrayTags));
+  }
+  public function confirm($id){
+    $arrayTags = Tag::find($id);
+    return view('foro.confirmarDeleteTag', array('id'=>$id, 'infoEdit'=>$arrayTags));
+  }
 }

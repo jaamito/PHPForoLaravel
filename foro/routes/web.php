@@ -43,6 +43,10 @@ Route::get('/inicio/crearTag','TagController@crear');
 
 Route::post('/inicio/crearTag','TagController@guardarTag');
 
+Route::get('/inicio/confirmDeleteTag/{id}', 'TagController@confirm');
+
+Route::delete('/inicio/confirmDeleteTag/{id}', 'TagController@delete');
+
 Route::get('/inicio/crearHashtag','HashtagController@index');
 
 Route::get('/inicio/{id}','HomeController@show');
