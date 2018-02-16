@@ -15,7 +15,7 @@
 
             <div class="panel-body" style="padding:30px">
 
-                <form action="{{ url('inicio/crearPost') }}" method="POST">
+                <form action="{{ url('inicio/crearTag') }}" method="POST">
 
                     {{ csrf_field() }}
 
@@ -23,17 +23,16 @@
                         <!--Nombre usuario-->
                         <label>Nombre usuario:</label>
                         <input readonly="readonly" type="text" name="nombreUsuario" value="{{ Auth::user()->name }}" id="nombreUsuario" class="form-control">
-
                         <label for="titulo">Tag</label>
                         <!-- -->
-                        <input type="text" name="titulo" id="titulo" class="form-control" required>
+                        <input type="text" name="nombre" id="nombre" class="form-control" required>
                         <!--Id usuario-->
                         <input readonly="readonly" type="hidden" name="idUsuario" value="{{ Auth::user()->id }}" id="idUsuario" class="form-control">
 
                     </div>
                     <div class="form-group text-center">
                         <button type="submit" class="btn btn-primary" style="padding:8px 100px;margin-top:25px;">
-                            Añadir Post
+                            Crear Tag
                         </button>
                     </div>
 

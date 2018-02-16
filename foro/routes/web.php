@@ -27,11 +27,15 @@ Route::get('/inicio/perfil','PerfilController@perfil');
 
 Route::get('/inicio','HomeController@index');
 
+Route::get('/inicio/verTags','TagController@index');
+
 Route::get('/inicio/crearPost','PostController@crear');
 
 Route::post('/inicio/crearPost','PostController@guardarPost');
 
-Route::get('/inicio/crearTag','TagController@index');
+Route::get('/inicio/crearTag','TagController@crear');
+
+Route::post('/inicio/crearTag','TagController@guardarTag');
 
 Route::get('/inicio/crearHashtag','HashtagController@index');
 
