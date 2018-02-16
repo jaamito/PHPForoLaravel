@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
+use App\Tag;
 
 class PostController extends Controller
 {
@@ -11,7 +12,12 @@ class PostController extends Controller
 	{
 		return view('foro.crearPost');
 	}
-	//Crear Post
+    public function vertags(){
+        $conTag = Tag::all();
+        return view('foro.crearPost',array('arrayTags'=>$conTag));
+	}
+
+    //Crear Post
 	public function guardarPost(Request $request) {
 		//creamos object Post
         $post = new Post();
@@ -21,6 +27,7 @@ class PostController extends Controller
         	$post->nombreUsuario = $request->input('nombreUsuario');
             $post->titulo = $request->input('titulo');
             $post->texto = $request->input('texto');
+            $post->idTag = $request->input('tag');
             $post->comentarios = 0;
             $post->img = ("Proximamente...");
             $post->save();

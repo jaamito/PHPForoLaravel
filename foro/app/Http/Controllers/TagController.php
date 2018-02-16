@@ -7,13 +7,6 @@ use App\Tag;
 use App\User;
 class TagController extends Controller
 {
-  public function index()
-  {
-      $arrayTags = Tag::select()->orderBy('id', 'desc')->get();
-      $contTag = Tag::all();
-      $contuser = User::all();
-      return view('foro.verTags', array('arrayTags'=>$arrayTags, '$cont1'=>$contTag,'$cont2'=>$contuser));
-  }
   public function crear()
   {
     return view('foro.crearTags');
@@ -25,4 +18,13 @@ class TagController extends Controller
       $tag->save();
       return view('foro.bien');
   }
+
+  public function buscar(Request $request){
+
+        $buscar = $request->input('buscar');
+        $arrayTags = Tag::select()->where('nombre','LIKE','%'.$buscar.'%')->get();
+        $contTag = Tag::all();
+        $contuser = User::all();
+        return view('foro.verTags', array('arrayTags'=>$arrayTags, '$cont1'=>$contTag,'$cont2'=>$contuser));
+    }
 }

@@ -29,9 +29,15 @@ Route::get('/inicio','HomeController@index');
 
 Route::get('/inicio/verTags','TagController@index');
 
+Route::post('/inicio/verTags','TagController@buscar');
+
+Route::get('/inicio/verTags','TagController@buscar');
+
 Route::get('/inicio/crearPost','PostController@crear');
 
 Route::post('/inicio/crearPost','PostController@guardarPost');
+
+Route::get('/inicio/crearPost','PostController@vertags');
 
 Route::get('/inicio/crearTag','TagController@crear');
 

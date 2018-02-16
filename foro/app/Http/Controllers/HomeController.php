@@ -64,13 +64,4 @@ class HomeController extends Controller
             return redirect('inicio/'.$request->input('idPost'));
     }
 
-    public function buscar(Request $request){
-
-        $buscar = $request->input('buscar');
-        $arrayBusqueda = Tags::select()->where('name','LIKE','%'.$buscar.'%')->get();
-
-
-
-
-    }
 }
