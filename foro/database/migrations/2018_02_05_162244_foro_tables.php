@@ -35,23 +35,14 @@ class ForoTables extends Migration
           $table->foreign('idUsuario')->references('id')->on('users')->onDelete('cascade');
           $table->foreign('idPost')->references('id')->on('post')->onDelete('cascade');
         });
-        Schema::create('hashtag', function (Blueprint $table) {
-          $table->increments('id');
-          $table->integer('idPost')->unsigned();
-          $table->string('nombreUsuario');
-          $table->integer('idComentario')->unsigned();
-          $table->string('nombre');
-          $table->timestamps();
-          $table->foreign('idPost')->references('id')->on('post')->onDelete('cascade');
-          $table->foreign('idComentario')->references('id')->on('comentario')->onDelete('cascade');
-        });
         Schema::create('tag', function (Blueprint $table) {
           $table->increments('id');
           $table->integer('idPost')->unsigned();
-          $table->string('nombreUsuario');
+          $table->integer('idUsuario')->unsigned();
           $table->string('nombre');
           $table->timestamps();
           $table->foreign('idPost')->references('id')->on('post')->onDelete('cascade');
+          $table->foreign('idUsuario')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
