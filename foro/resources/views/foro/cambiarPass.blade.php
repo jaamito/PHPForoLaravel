@@ -15,15 +15,6 @@
                 <tr>
                   <td></td>
                   <td><input type="hidden" name="id" value="{{ Auth::user()->id }}" id="nombreUsuario" class="form-control"></td>
-                  @if ($errors->has('password'))
-                      <span class="help-block">
-                          <strong>{{ $errors->first('password') }}</strong>
-                      </span>
-                  @endif
-                </tr>
-                <tr>
-                  <td>Contraseña Antigua</td>
-                  <td><input type="password" name="oldPassword" id="oldPassword" class="form-control"></td>
                 </tr>
                 <tr>
                   <td>Nueva Contraseña</td>
@@ -31,7 +22,7 @@
                 </tr>
                 <tr>
                   <td>Confirma Nueva Contraseña</td>
-                  <td><input type="password" name="newPasswordConfirm" id="newPassword" class="form-control"></td>
+                  <td><input type="password" name="newPasswordConfirm" id="newPasswordConfirm" class="form-control"></td>
                 </tr>
                 <tr>
                   <td></td>

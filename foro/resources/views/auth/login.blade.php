@@ -15,7 +15,7 @@
     <link href="{{ asset('css/app2.css') }}" rel="stylesheet">
     <link href="{{ asset('js/app2.js') }}" rel="stylesheet">
     <style type="text/css">
-       
+
     </style>
 </head>
 <nav class="navbar navbar-inverse" role="navigation">
@@ -37,7 +37,7 @@
          <ul class="nav navbar-nav navbar-right">
             <li><a href="{{ route('register') }}"><button type="submit" class="btn btn-primary">
                                 Registrar</button></a>
-        
+
   </div>
   <!--INVITADO-->
 </li>
@@ -98,6 +98,7 @@
                                 <a class="btn btn-link" href="{{ route('password.request') }}">
                                     Has perdido tu contraseña?
                                 </a>
+                              
                             </div>
                         </div>
                     </form>

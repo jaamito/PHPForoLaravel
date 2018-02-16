@@ -47,9 +47,26 @@ class PerfilController extends Controller
       return view('foro.cambiarPass');
     }
     public function updateP(Request $request){
-      $user= User::find($request->input('id'));
-      $user->password=$request->input('newPassword');
-      $user->save();
+      $password=$request->input('newPassword');
+      $confirmPassword=$request->input('newPasswordConfirm');
+      if($password===$confirmPassword){
+
+
+        $user= User::find($request->input('id'));
+
+        $user->password=$request->input('newPassword');
+        $user->save();
+        $arrayUser = User::all();
+        $arrayPost = Post::all();
+        $arrayComent = Comentarios::all();
+        return view('foro.perfil', array('arrayPost'=>$arrayPost,'arrayComent'=>$arrayComent,'arrayUser'=>$arrayUser));
+
+      }else{
+        $arrayUser = User::all();
+        $arrayPost = Post::all();
+        $arrayComent = Comentarios::all();
+        return view('foro.cambiarPass', array('arrayPost'=>$arrayPost,'arrayComent'=>$arrayComent,'arrayUser'=>$arrayUser));
+      }
       $arrayUser = User::all();
       $arrayPost = Post::all();
       $arrayComent = Comentarios::all();
