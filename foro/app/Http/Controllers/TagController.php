@@ -18,6 +18,7 @@ class TagController extends Controller
       $tag->nombre = $request->input('nombre');
       $tag->save();
       return redirect('inicio/verTags');
+
   }
 
  
@@ -30,6 +31,8 @@ class TagController extends Controller
         $contuser = User::all();
         $contPost = Post::all();
         return view('foro.verTags', array('arrayTags'=>$arrayTags, 'cont1'=>$contTag,'cont2'=>$contuser,'contPost'=>$contPost));
+
+
     }
 
   public function delete($id) {
@@ -40,8 +43,5 @@ class TagController extends Controller
       $arrayTags = Tag::select()->orderBy('id', 'desc')->get();
       return redirect('inicio/verTags');
   }
-  public function confirm($id){
-    $arrayTags = Tag::find($id);
-    return view('foro.confirmarDeleteTag', array('id'=>$id, 'infoEdit'=>$arrayTags));
-  }
+ 
 }

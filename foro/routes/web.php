@@ -27,8 +27,6 @@ Route::get('/inicio/perfil','PerfilController@perfil');
 
 Route::get('/inicio','HomeController@index');
 
-Route::get('/inicio/verTags','TagController@index');
-
 Route::post('/inicio/verTags','TagController@buscar');
 
 Route::get('/inicio/verTags','TagController@buscar');

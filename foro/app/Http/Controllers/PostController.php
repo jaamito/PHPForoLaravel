@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Post;
 use App\Tag;
+use App\Comentarios;
+use App\User;
 
 class PostController extends Controller
 {
@@ -31,7 +33,11 @@ class PostController extends Controller
             $post->comentarios = 0;
             $post->img = ("Proximamente...");
             $post->save();
-            return view('foro.bien');
+            $arrayPost = Post::select()->orderBy('id', 'desc')->get();
+            $countcoment = Comentarios::all();
+            $contpost = Post::all();
+            $contuser = User::all();
+            return view('home', array('arrayPost'=>$arrayPost,'countcoment'=>$countcoment,'$cont'=>$countcoment,'$cont1'=>$contpost,'$cont2'=>$contuser));
     }
-    
+
 }
