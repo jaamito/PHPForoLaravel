@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Tag;
 use App\User;
+use App\Post;
 class TagController extends Controller
 {
   public function crear()
@@ -16,9 +17,10 @@ class TagController extends Controller
       $tag->idUsuario = $request->input('idUsuario');
       $tag->nombre = $request->input('nombre');
       $tag->save();
-      return view('foro.bien');
+      return redirect('inicio/verTags');
   }
 
+ 
 
   public function buscar(Request $request){
 
@@ -26,7 +28,8 @@ class TagController extends Controller
         $arrayTags = Tag::select()->where('nombre','LIKE','%'.$buscar.'%')->get();
         $contTag = Tag::all();
         $contuser = User::all();
-        return view('foro.verTags', array('arrayTags'=>$arrayTags, '$cont1'=>$contTag,'$cont2'=>$contuser));
+        $contPost = Post::all();
+        return view('foro.verTags', array('arrayTags'=>$arrayTags, 'cont1'=>$contTag,'cont2'=>$contuser,'contPost'=>$contPost));
     }
 
   public function delete($id) {
@@ -35,7 +38,7 @@ class TagController extends Controller
 
       $tag->delete();
       $arrayTags = Tag::select()->orderBy('id', 'desc')->get();
-      return view('foro.verTags', array('arrayTags'=>$arrayTags));
+      return redirect('inicio/verTags');
   }
   public function confirm($id){
     $arrayTags = Tag::find($id);

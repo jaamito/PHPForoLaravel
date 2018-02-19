@@ -44,7 +44,13 @@
                       <td>{{$tag->nombre}}</td>
                       <td>{{Auth::user()->name}}</td>
                       <td>{{$tag->created_at}}</td>
-                      <td>1</td>
+                       <?php $PostConTags = 0; ?>
+                          @foreach($contPost as $key => $postt)
+                            @if($postt->idTag == $tag->id)
+                                <?php $PostConTags++; ?>
+                            @endif
+                        @endforeach
+                      <td>{{$PostConTags}}</td>
                       <td><a style="color: red;" href="{{ url('/inicio/confirmDeleteTag/'.$tag->id) }}"><span class="glyphicon glyphicon-remove"></span> Eliminar</a></td>
                     </tr>
                   @endif
