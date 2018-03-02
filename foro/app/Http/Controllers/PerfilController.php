@@ -37,7 +37,7 @@ class PerfilController extends Controller
     public function deleteUser(Request $request) {
         $user= User::find($request->input('id'));
         $user->delete();
-        return view('foro.delete');
+        return redirect('/login');
     }
     public function confirmUser(Request $request){
       $user= User::find($request->input('id'));

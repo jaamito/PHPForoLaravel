@@ -37,7 +37,7 @@ class PostController extends Controller
             $countcoment = Comentarios::all();
             $contpost = Post::all();
             $contuser = User::all();
-            return view('home', array('arrayPost'=>$arrayPost,'countcoment'=>$countcoment,'$cont'=>$countcoment,'$cont1'=>$contpost,'$cont2'=>$contuser));
+            return redirect('/inicio');
     }
 
 }

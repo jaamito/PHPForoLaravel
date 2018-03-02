@@ -14,7 +14,7 @@ class DeleteController extends Controller
         $post->delete();
         $arrayPost = Post::select()->orderBy('id', 'desc')->get();
         $countcoment = Comentarios::all();
-        return view('foro.delete', array('arrayPost'=>$arrayPost,'countcoment'=>$countcoment));
+        return redirect('/inicio');
     }
     public function confirm($id){
       $arrayPost = Post::find($id);
