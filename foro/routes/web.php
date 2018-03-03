@@ -17,6 +17,10 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::get('/inicio/chat','ChatController@index');
+
+Route::post('/inicio/chat','ChatController@store');
+
 Route::get('/inicio/banear/{id}', 'BanController@indexBan');
 
 Route::post('/inicio/banear/{id}', 'BanController@updateBan');
@@ -41,7 +45,7 @@ Route::get('/inicio/crearTag','TagController@crear');
 
 Route::post('/inicio/crearTag','TagController@guardarTag');
 
-Route::get('/inicio/confirmDeleteTag/{id}', 'TagController@confirm');
+Route::get('/inicio/confirmDeleteTag/{id}', 'TagController@delete');
 
 Route::delete('/inicio/confirmDeleteTag/{id}', 'TagController@delete');
 

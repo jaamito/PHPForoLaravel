@@ -59,6 +59,7 @@
           <li><a href="{{ url('inicio/verTags') }}" role="button"><span class="glyphicon glyphicon-eye-open" style="color: green;"></span> Ver Tags </a></li>
         </ul>
       </li>
+      <li><a href="{{ url('inicio/chat') }}"  role="button"><span class="glyphicon glyphicon-plus" style="color: green;"></span> Chat </a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li class="dropdown">
