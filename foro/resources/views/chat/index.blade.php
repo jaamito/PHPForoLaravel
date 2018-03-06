@@ -20,6 +20,7 @@ div.ex4 {
 
 }
 </style>
+<FONT SIZE=0.5>alpha 0.1</font>
   <!--Usuarios-->
 <div class="col-md-offset-0 col-md-2">
 	<div class="panel panel-primary">
@@ -37,6 +38,7 @@ div.ex4 {
 	</div>
 </div>
    <!--Mensajes-->
+
    <div class="col-md-offset-0 col-md-8">
 	<div class="panel panel-primary">
       	<div class="panel-heading">Usuarios</div>
