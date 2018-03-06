@@ -10,6 +10,7 @@
     }
 </style>
 @section('content')
+@isset($arrayPost)
 @if( Auth::user()->ban === "1" )
 <div class="container" style="margin-right: 6%;">
 <iframe src="https://rcm-eu.amazon-adsystem.com/e/cm?o=30&p=48&l=ur1&category=videojuegos&banner=1JVX92HQMR48DWVPVFR2&f=ifr&linkID=a7f282763f766ad18a43f0692af4a2a3&t=ianlopezzam03-21&tracking_id=ianlopezzam03-21" width="728" height="90" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
@@ -105,4 +106,8 @@
     </div>
 </div>  
 @endif
+@endisset
+@empty($arrayPost)
+<H1>NO hay posts</H1>
+@endempty
 @endsection

@@ -17,8 +17,8 @@ class ChatController extends Controller
     public function index()
     {
         $contuser = User::select()->where("id","!=",Auth::user()->id)->get();
-        $mensaje = Chat::select()->orderBy('id')->get();
-        return view('chat.index',array('arrayUsers'=>$contuser, 'arrayMensajes'=>$mensaje));
+        $mensaje = Chat::get();
+        return view('chat.index',array('arrayUsers'=>$contuser, 'arrayMensajes'=>$mensaje),compact('mensaje'));
     }
 
     /**
