@@ -15,7 +15,7 @@
     <link href="{{ asset('css/app2.css') }}" rel="stylesheet">
     <link href="{{ asset('js/app2.js') }}" rel="stylesheet">
     <style type="text/css">
-       
+
     </style>
 </head>
 <nav class="navbar navbar-inverse" role="navigation">
@@ -63,7 +63,7 @@
                                 @endif
                             </div>
                         </div>
-            
+
                         <!--Direccion-->
                         <div class="form-group{{ $errors->has('direccion') ? ' has-error' : '' }}">
                             <label for="direccion" class="col-md-4 control-label"><span class="glyphicon glyphicon-home"></span>&nbsp;&nbsp;Dirección</label>
@@ -113,13 +113,13 @@
                         <!--ban-->
                         <!--Admin-->
                         <div class="form-group{{ $errors->has('admin') ? ' has-error' : '' }}">
-                            <label for="admin" class="col-md-4 control-label"><span class="glyphicon glyphicon-check"></span>&nbsp;Admin</label>
-
+                            <!--<label for="admin" class="col-md-4 control-label"><span class="glyphicon glyphicon-check"></span>&nbsp;Admin</label>
+                            -->
                             <div class="col-md-6">
-                                <label for="admin" class="col-md-4 control-label"><input id="admin" type="radio" name="admin" value="1" >Si</label>
-                                
-                                <label for="admin" class="col-md-4 control-label"><input id="admin" type="radio"  name="admin" value="0" >No</label>
-                                
+                                <!--<label for="admin" class="col-md-4 control-label"><input id="admin" type="radio" name="admin" value="1" >Si</label>
+
+                                <label for="admin" class="col-md-4 control-label"><input id="admin" type="radio"  name="admin" value="0" >No</label>-->
+                                <input id="admin" type="hidden" class="form-control" name="admin" value="0" required autofocus>
                             </div>
                         </div>
                         <!--/Admin-->
